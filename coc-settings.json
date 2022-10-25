@@ -1,0 +1,10 @@
+{
+    "languageserver": {
+        "clangd": {
+            "command": "clangd",
+            "args": ["-j", "8", "--header-insertion=never", "--pch-storage=memory", "--compile-commands-dir=build"],
+            "filetypes": ["c", "cpp", "cxx", "h", "hpp", "hxx"],
+            "cwd": "."
+        }
+    }
+}

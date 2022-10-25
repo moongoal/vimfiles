@@ -1,0 +1,7 @@
+.netrwhist
+
+*~
+*.swp
+
+build/
+dist/

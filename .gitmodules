@@ -1,0 +1,7 @@
+[submodule "pack/coc/start/coc.nvim"]
+	path = pack/coc/start/coc.nvim
+	url = github.com:neoclide/coc.nvim.git
+	branch = release
+[submodule "pack/ctrlp/start/ctrlp"]
+	path = pack/ctrlp/start/ctrlp
+	url = github.com:ctrlpvim/ctrlp.vim.git
