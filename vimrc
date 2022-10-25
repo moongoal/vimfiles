@@ -4,6 +4,8 @@
 set noswapfile
 
 " Text editing {{{1
+syntax on
+
 set encoding=utf-8 ff=unix makeencoding=utf-8
 set autoindent expandtab smartindent
 set nosmarttab shiftwidth=4 tabstop=4 softtabstop=4
