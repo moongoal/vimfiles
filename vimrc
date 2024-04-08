@@ -18,7 +18,7 @@ colorscheme torte
 set nocp
 set notimeout
 set shortmess+=I
-set foldmethod=syntax
+set foldmethod=manual
 set laststatus=2
 
 " Fuzzy finder {{{1
