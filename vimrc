@@ -10,6 +10,7 @@ set encoding=utf-8 ff=unix makeencoding=utf-8
 set autoindent expandtab smartindent
 set nosmarttab shiftwidth=4 tabstop=4 softtabstop=4
 set number hlsearch
+set bs=eol
 
 
 " Interface {{{1
@@ -20,6 +21,17 @@ set notimeout
 set shortmess+=I
 set foldmethod=manual
 set laststatus=2
+set cursorline
+
+" GUI {{{1
+if has("gui_running")
+    set mousehide
+    set guioptions=cgk\!
+    set guifont=Inconsolata:h16:W500:cANSI:qDRAFT
+    set guifont=Fira_Code:h12:cANSI:qDRAFT
+    set guicursor=a:block-blinkon1000-blinkoff0,i:block-blinkon500-blinkoff500
+    au GUIEnter * simalt ~x
+endif
 
 " Fuzzy finder {{{1
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']

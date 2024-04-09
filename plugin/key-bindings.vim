@@ -8,4 +8,5 @@ nnoremap <silent> <F2> <Cmd>Explore<CR>
 nnoremap <silent> <Leader>b <Cmd>buffers<CR>
 nnoremap <silent> <Leader>k <Cmd>terminal<CR>
 
+" Coding
 nnoremap <silent> <Leader>e <Cmd>CocDiagnostics<CR>
