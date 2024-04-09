@@ -10,11 +10,11 @@ set encoding=utf-8 ff=unix makeencoding=utf-8
 set autoindent expandtab smartindent
 set nosmarttab shiftwidth=4 tabstop=4 softtabstop=4
 set number hlsearch
-set bs=eol
+set bs=indent,eol,start,nostop
 
 
 " Interface {{{1
-colorscheme torte
+colorscheme sorbet
 
 set nocp
 set notimeout
@@ -22,6 +22,8 @@ set shortmess+=I
 set foldmethod=manual
 set laststatus=2
 set cursorline
+
+let g:netrw_keepdir=0
 
 " GUI {{{1
 if has("gui_running")
