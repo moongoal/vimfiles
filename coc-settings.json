@@ -1,3 +1,5 @@
 {
-    "clangd.arguments": ["--enable-config", "--header-insertion=never", "--pch-storage=memory", "-j", "8"]
+    "clangd.arguments": ["--enable-config", "--header-insertion=never", "--pch-storage=memory", "-j", "8"],
+    "semanticTokens.enable": true,
+    "semanticTokens.filetypes": ["c", "h", "cpp", "hpp"]
 }
