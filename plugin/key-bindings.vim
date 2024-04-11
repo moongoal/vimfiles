@@ -13,5 +13,6 @@ nnoremap <silent> <Leader>e <Cmd>CocDiagnostics<CR>
 nnoremap <silent> <Leader>o <Cmd>CocOutline<CR>
 nnoremap <silent> <Leader>i <Cmd>call CocActionAsync('definitionHover')<CR>
 nnoremap <silent> <Leader>d <Cmd>call CocActionAsync('jumpDefinition', 'split')<CR>
+nnoremap <silent> <Leader><S-d> <Cmd>call CocActionAsync('jumpDefinition', 'split')<CR>
 nnoremap <silent> <Leader><F2> <Cmd>call CocActionAsync('refactor')<CR>
 nnoremap <silent> <Leader>a <Cmd>call CocActionAsync('codeAction', 'cursor')<CR>

@@ -2,6 +2,7 @@
 
 " Files {{{1
 set noswapfile
+au BufNewFile,BufRead *.c,*.h set syntax=c
 
 " Text editing {{{1
 syntax on
