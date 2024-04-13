@@ -1,13 +1,20 @@
 " vim:foldmethod=marker foldlevel=0
 
+let cur_dir=expand('<sfile>:h')
+let autoload_dir=cur_dir .. "\\autoload"
+
+" Paths {{{1
+exec "set runtimepath+='" .. autoload_dir .. "'"
+
 " Files {{{1
 set noswapfile
-au BufNewFile,BufRead *.c,*.h set syntax=c
+au BufNewFile,BufRead *.c,*.h set syntax=c ff=unix
+au BufWrite *.c,*.h call srcclean#RemoveExtraSpacing()
 
 " Text editing {{{1
 syntax on
 
-set encoding=utf-8 ff=unix makeencoding=utf-8
+set encoding=utf-8 ff=unix makeencoding=utf-8 ffs=unix,dos
 set autoindent expandtab smartindent
 set nosmarttab shiftwidth=4 tabstop=4 softtabstop=4
 set number hlsearch
@@ -30,7 +37,6 @@ let g:netrw_keepdir=0
 if has("gui_running")
     set mousehide
     set guioptions=cgk\!
-    set guifont=Inconsolata:h16:W500:cANSI:qDRAFT
     set guifont=Fira_Code:h12:cANSI:qDRAFT
     set guicursor=a:block-blinkon1000-blinkoff0,i:block-blinkon500-blinkoff500
     au GUIEnter * simalt ~x
