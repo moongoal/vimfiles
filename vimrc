@@ -1,7 +1,11 @@
 " vim:foldmethod=marker foldlevel=0
 
+if exists("+shellslash")
+    set shellslash
+endif
+
 let cur_dir=expand('<sfile>:h')
-let autoload_dir=cur_dir .. "\\autoload"
+let autoload_dir=cur_dir .. "/autoload"
 
 " Paths {{{1
 exec "set runtimepath+='" .. autoload_dir .. "'"
