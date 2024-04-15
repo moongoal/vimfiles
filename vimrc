@@ -12,8 +12,13 @@ exec "set runtimepath+='" .. autoload_dir .. "'"
 
 " Files {{{1
 set noswapfile
-au BufNewFile,BufRead *.c,*.h set syntax=c ff=unix
+
+au BufRead * set ffs=unix,dos
+
+au BufNewFile,BufRead *.c,*.h set syntax=c
 au BufWrite *.c,*.h call srcclean#RemoveExtraSpacing()
+
+let g:c_syntax_for_h=1
 
 " Text editing {{{1
 syntax on
@@ -57,4 +62,4 @@ set ssop=folds,globals,localoptions,resize,sesdir,slash,tabpages,terminal,unix
 " Plugins & Additional configuration files {{{1
 filetype plugin on
 
-runtime! config/**/*.vim
+" runtime! config/**/*.vim
