@@ -1,0 +1,6 @@
+[submodule "tokyonight"]
+	path = pack/contrib/start/tokyonight-vim
+	url = https://github.com/ghifarit53/tokyonight-vim.git
+[submodule "gruvbox"]
+	path = pack/contrib/start/gruvbox
+	url = https://github.com/morhetz/gruvbox.git

@@ -1,0 +1,84 @@
+" vim:foldmethod=marker foldlevel=0
+
+" Files {{{1
+
+filetype indent off
+set noswapfile
+syntax on
+
+au BufNew,BufRead * setlocal ffs=unix,dos
+au BufNewFile,BufRead *.c,*.h setlocal syntax=c
+
+" Text editing {{{1
+
+set makeencoding=utf-8
+set autoindent expandtab number hlsearch
+set nosmartindent nocindent nosmarttab
+set shiftwidth=2 tabstop=2 softtabstop=2
+set bs=indent,eol,start,nostop
+set completeopt=fuzzy,menu,popup,preview,longest
+
+" Interface {{{1
+
+set nocompatible notimeout
+set cursorline
+set shortmess+=I
+set foldmethod=manual
+set laststatus=2
+
+let g:netrw_keepdir=0
+
+if has("gui_running")
+    set mousehide
+    set guioptions=
+    set guifont=FiraCode\Nerd\Font:h16
+    set guicursor=a:block-blinkon1000-blinkoff0,i:block-blinkon500-blinkoff500
+endif
+
+if has("termguicolors")
+  set termguicolors
+endif
+
+colorscheme gruvbox
+
+" System Interface {{{1
+set shell=nu
+set sp=\|\ tee\ {\ save\ -f\ -r\ %s\ }
+set shcf=-c shq=\" sxq=
+
+" Sessions {{{1
+set ssop=folds,globals,localoptions,resize,sesdir,slash,tabpages,terminal,unix
+
+" Plugins {{{1
+
+" Key Bindings {{{1
+" Navigation {{{2
+nnoremap <silent> <TAB> <Cmd>tabnext<CR>
+nnoremap <S-TAB> <Cmd>tabprev<CR>
+nnoremap <Leader>t <Cmd>tabnew<CR>
+" nnoremap <F2> <Cmd>Neotree filesystem toggle left<CR>
+" nnoremap <Leader><F2> <Cmd>Neotree reveal<CR>
+
+" Panes {{{2
+nnoremap <silent> <Leader>b <Cmd>buffers<CR>
+nnoremap <silent> <Leader>k <Cmd>terminal<CR>
+
+" Editing {{{2
+nnoremap <silent> <Leader>= <Cmd>IncreaseFontSize<CR>
+nnoremap <silent> <Leader>- <Cmd>DecreaseFontSize<CR>
+
+" IDE {{{2
+" local telescope = require('telescope.builtin')
+
+nnoremap <Leader>ff :find 
+nnoremap <Leader>fb :buffers<CR>:b 
+" vim.keymap.set('n', '<leader>fg', telescope.live_grep, { desc = 'Telescope live grep' })
+
+nnoremap <C-B>i :call project#GenTags()<CR>
+nnoremap <C-B>c :call project#Configure()<CR>
+nnoremap <C-B>b :make<CR>
+nnoremap <C-B>t :call project#Test()<CR>
+nnoremap <C-B>n :cnext<CR>
+nnoremap <C-B>p :cprevious<CR>
+nnoremap <C-B>e :cc<CR>
+
