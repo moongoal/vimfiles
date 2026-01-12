@@ -4,7 +4,6 @@
 
 filetype indent off
 set noswapfile
-syntax on
 
 au BufNew,BufRead * setlocal ffs=unix,dos
 au BufNewFile,BufRead *.c,*.h setlocal syntax=c
@@ -34,7 +33,7 @@ let g:netrw_keepdir=0
 
 if has("gui_running")
     set mousehide
-    set guioptions=
+    set guioptions=CM
     set guifont=Fira_Code:h16
     set guicursor=a:block-blinkon1000-blinkoff0,i:block-blinkon500-blinkoff500
 endif
@@ -42,6 +41,9 @@ endif
 if has("termguicolors")
   set termguicolors
 endif
+
+syntax on
+filetype on
 
 colorscheme gruvbox
 
