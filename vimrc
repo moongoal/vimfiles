@@ -60,8 +60,9 @@ set ssop=folds,globals,localoptions,resize,sesdir,slash,tabpages,terminal,unix
 nnoremap <silent> <TAB> <Cmd>tabnext<CR>
 nnoremap <S-TAB> <Cmd>tabprev<CR>
 nnoremap <Leader>t <Cmd>tabnew<CR>
-" nnoremap <F2> <Cmd>Neotree filesystem toggle left<CR>
-" nnoremap <Leader><F2> <Cmd>Neotree reveal<CR>
+nnoremap <F2> <Cmd>NERDTreeToggle<CR>
+nnoremap <C-F2> <Cmd>NERDTreeFind<CR>
+nnoremap <S-F2> <Cmd>NERDTreeFocus<CR>
 
 " Panes {{{2
 nnoremap <silent> <Leader>b <Cmd>buffers<CR>

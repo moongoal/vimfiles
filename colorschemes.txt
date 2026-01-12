@@ -2,7 +2,7 @@ Scheme      Description
 ------------------------------------------
 blue        Retro
 elflord     Dark, neon, cyan
-peachpuff   Salmony, fresh, coloured
+peachpuff   Fresh, coloured
 retrobox    Shiny, fresh, coloured, yellow
 ron         Dark, neon, blue
 slate       Professional dark
