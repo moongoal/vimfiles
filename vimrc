@@ -1,12 +1,17 @@
 " vim:foldmethod=marker foldlevel=0
 
+set nocompatible
+let mapleader = " "
+
 " Files {{{1
 
 filetype indent off
 set noswapfile
+set ffs=unix,dos
 
-au BufNew,BufRead * setlocal ffs=unix,dos ff=unix
-au BufNewFile,BufRead *.c,*.h setlocal syntax=c
+augroup Files
+  au BufNewFile,BufRead *.c,*.h setlocal syntax=c
+augroup END
 
 " Text editing {{{1
 
@@ -23,7 +28,7 @@ endif
 
 " Interface {{{1
 
-set nocompatible notimeout
+set notimeout
 set cursorline
 set shortmess+=I
 set foldmethod=manual
@@ -77,16 +82,16 @@ nnoremap <silent> <Leader>- <Cmd>DecreaseFontSize<CR>
 " IDE {{{2
 " local telescope = require('telescope.builtin')
 
-nnoremap <Leader>ff :find 
-nnoremap <Leader>fb :buffers<CR>:b 
+nnoremap <Leader>ff <Cmd>find 
+nnoremap <Leader>fb <Cmd>buffers<CR>:b 
 
-nnoremap <Leader>bi :call project#GenTags()<CR>
-nnoremap <Leader>bc :call project#Configure()<CR>
-nnoremap <Leader>bb :make<CR>
-nnoremap <Leader>bt :call project#Test()<CR>
+nnoremap <Leader>bi <Cmd>call project#GenTags()<CR>
+nnoremap <Leader>bc <Cmd>call project#Configure()<CR>
+nnoremap <Leader>bb <Cmd>make<CR>
+nnoremap <Leader>bt <Cmd>call project#Test()<CR>
 
-nnoremap <Leader>en :cnext<CR>
-nnoremap <Leader>ep :cprevious<CR>
-nnoremap <Leader>ee :cc<CR>
-nnoremap <Leader>el :cl<CR>
+nnoremap <Leader>en <Cmd>cnext<CR>
+nnoremap <Leader>ep <Cmd>cprevious<CR>
+nnoremap <Leader>ee <Cmd>cc<CR>
+nnoremap <Leader>el <Cmd>cl<CR>
 
