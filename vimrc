@@ -18,6 +18,10 @@ set shiftwidth=2 tabstop=2 softtabstop=2
 set bs=indent,eol,start,nostop
 set completeopt=fuzzy,menu,popup,preview,longest
 
+if has("win32")
+  set ssl
+endif
+
 " Interface {{{1
 
 set nocompatible notimeout
@@ -31,7 +35,7 @@ let g:netrw_keepdir=0
 if has("gui_running")
     set mousehide
     set guioptions=
-    set guifont=FiraCode\Nerd\Font:h16
+    set guifont=FiraCode\ Nerd\ Font\ Mono:h16
     set guicursor=a:block-blinkon1000-blinkoff0,i:block-blinkon500-blinkoff500
 endif
 
@@ -72,13 +76,14 @@ nnoremap <silent> <Leader>- <Cmd>DecreaseFontSize<CR>
 
 nnoremap <Leader>ff :find 
 nnoremap <Leader>fb :buffers<CR>:b 
-" vim.keymap.set('n', '<leader>fg', telescope.live_grep, { desc = 'Telescope live grep' })
 
-nnoremap <C-B>i :call project#GenTags()<CR>
-nnoremap <C-B>c :call project#Configure()<CR>
-nnoremap <C-B>b :make<CR>
-nnoremap <C-B>t :call project#Test()<CR>
-nnoremap <C-B>n :cnext<CR>
-nnoremap <C-B>p :cprevious<CR>
-nnoremap <C-B>e :cc<CR>
+nnoremap <Leader>bi :call project#GenTags()<CR>
+nnoremap <Leader>bc :call project#Configure()<CR>
+nnoremap <Leader>bb :make<CR>
+nnoremap <Leader>bt :call project#Test()<CR>
+
+nnoremap <Leader>en :cnext<CR>
+nnoremap <Leader>ep :cprevious<CR>
+nnoremap <Leader>ee :cc<CR>
+nnoremap <Leader>el :cl<CR>
 

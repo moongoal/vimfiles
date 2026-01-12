@@ -1,20 +1,18 @@
-" function change_font_size(delta)
-"   let current = &guifont
-"   let pattern = "([^:]+):h(%d+)"
-"   let found = string.match(current, pattern)
-" 
-"   if found != -1
-"     let name = matchstr(current, pattern)
-"     local new_size = tonumber(size) + delta
-"     set guifont=string.format("%s:h%d", name, new_size)
-"   endif
-" endfunction
-" 
-" vim.api.nvim_create_user_command("IncreaseFontSize", function()
-"   change_font_size(1)
-" end, {})
-" 
-" vim.api.nvim_create_user_command("DecreaseFontSize", function()
-"   change_font_size(-1)
-" end, {})
+function s:change_font_size(delta)
+  let current = &guifont
+  let pattern = "\\([^:]\\+\\):h\\(\\d\\+\\)"
+  let res = matchlist(current, pattern)
+
+  if len(res) > 0
+    let name = res[1]
+    let size = str2nr(res[2])
+    let new_size = size + a:delta
+    let newfont = printf("%s:h%d", name, new_size)
+
+    exe "set guifont=" .. escape(newfont, " ")
+  endif
+endfunction
+
+command IncreaseFontSize call s:change_font_size(1)
+command DecreaseFontSize call s:change_font_size(-1)
 
