@@ -5,7 +5,7 @@
 filetype indent off
 set noswapfile
 
-au BufNew,BufRead * setlocal ffs=unix,dos
+au BufNew,BufRead * setlocal ffs=unix,dos ff=unix
 au BufNewFile,BufRead *.c,*.h setlocal syntax=c
 
 " Text editing {{{1
