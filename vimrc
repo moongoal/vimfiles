@@ -21,6 +21,7 @@ set nosmartindent nocindent nosmarttab
 set shiftwidth=2 tabstop=2 softtabstop=2
 set bs=indent,eol,start,nostop
 set completeopt=fuzzy,menu,popup,preview,longest
+set complete=.,w,b,u,t
 
 if has("win32")
   set ssl
