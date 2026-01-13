@@ -6,6 +6,7 @@ let mapleader = " "
 " Files {{{1
 
 filetype indent off
+set autowrite hidden
 set noswapfile
 set ffs=unix,dos
 
@@ -56,7 +57,7 @@ colorscheme gruvbox
 " System Interface {{{1
 set shell=nu
 set sp=\|\ tee\ {\ save\ -f\ -r\ %s\ }
-set shcf=-c shq=\" sxq=
+set shcf=-c shq= sxq=\"
 
 " Sessions {{{1
 set ssop=folds,globals,localoptions,resize,sesdir,slash,tabpages,terminal,unix
