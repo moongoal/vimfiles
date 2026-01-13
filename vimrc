@@ -80,10 +80,8 @@ nnoremap <silent> <Leader>= <Cmd>IncreaseFontSize<CR>
 nnoremap <silent> <Leader>- <Cmd>DecreaseFontSize<CR>
 
 " IDE {{{2
-" local telescope = require('telescope.builtin')
-
-nnoremap <Leader>ff <Cmd>find 
-nnoremap <Leader>fb <Cmd>buffers<CR>:b 
+nnoremap <Leader>ff :find 
+nnoremap <Leader>fb :buffers<CR>:b 
 
 nnoremap <Leader>bi <Cmd>call project#GenTags()<CR>
 nnoremap <Leader>bc <Cmd>call project#Configure()<CR>
