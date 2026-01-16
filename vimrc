@@ -41,7 +41,7 @@ let g:netrw_keepdir=0
 
 if has("gui_running")
     set mousehide
-    set guioptions=CM
+    set guioptions=CMc
     set guifont=Fira_Code:h16
     set guicursor=a:block-blinkon1000-blinkoff0,i:block-blinkon500-blinkoff500
 endif
